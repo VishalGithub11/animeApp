@@ -15,10 +15,21 @@ const AnimeInfo = () => {
         <div className="right">
           <h2>{info.titles.en}</h2>
 
-          <a href={info.trailer_url}>
-            {" "}
-            <button className="trailer">Watch Trailer</button>
-          </a>
+          {info.trailer_url ? (
+            <a href={info.trailer_url}>
+              <button className="trailer">Watch Trailer</button>
+            </a>
+          ) : (
+            <a href={info.trailer_url}>
+              <button
+                style={{ background: "grey" }}
+                disabled
+                className="trailer"
+              >
+                Watch Trailer
+              </button>
+            </a>
+          )}
 
           <div className="episodes">
             Number of Episodes: {info.episodes_count}
@@ -26,7 +37,10 @@ const AnimeInfo = () => {
 
           <div className="season_year">Season-Year: {info.season_year}</div>
           <div className="description">
-            <strong>Description: </strong> {info.descriptions.en}
+            <strong>Description: </strong>{" "}
+            {info.descriptions.en
+              ? info.descriptions.en
+              : "No description available"}
           </div>
         </div>
       </div>

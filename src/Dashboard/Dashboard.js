@@ -3,7 +3,6 @@ import Header from "./Header";
 import Main from "./Main";
 const Dashboard = () => {
   const [animeList, setAnimeList] = useState([]);
-  const [topAnime, SetTopAnime] = useState([]);
   const [search, SetSearch] = useState("");
   const token =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ3NSIsIm5iZiI6MTYzMzk2OTIyOCwiZXhwIjoxNjM2NTYxMjI4LCJpYXQiOjE2MzM5NjkyMjh9.kxiQTkGs3MW5j9NXlz0-xsBTqv1EB_l3FVfeTjLlmpc";
@@ -15,7 +14,6 @@ const Dashboard = () => {
     getTenAnime(search);
   };
 
-  console.log("toppest ", topAnime);
 
   const getTenAnime = async (data) => {
     const searchable = data && data.replace(" ", " %20");
